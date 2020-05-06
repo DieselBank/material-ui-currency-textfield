@@ -42,4 +42,7 @@ export interface CurrencyInputProps {
   endAdornment?: React.ReactNode
 }
 
-export class CurrencyInput extends React.Component<CurrencyInputProps, any> {}
+export default class CurrencyInput extends React.Component<
+  CurrencyInputProps,
+  any
+> {}

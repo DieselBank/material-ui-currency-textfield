@@ -38,7 +38,7 @@ export interface CurrencyTextFieldProps {
   preDefined?: object
 }
 
-export class CurrencyTextField extends React.Component<
+export default class CurrencyTextField extends React.Component<
   CurrencyTextFieldProps,
   any
 > {}
