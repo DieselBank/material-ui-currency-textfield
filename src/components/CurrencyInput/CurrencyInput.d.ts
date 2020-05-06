@@ -35,7 +35,11 @@ export interface CurrencyInputProps {
   selectOnFocus?: boolean
   positiveSignCharacter?: string
   readOnly?: boolean
+  fullWidth?: boolean
+  disableUnderline?: boolean
   preDefined?: object
+  startAdornment?: React.ReactNode
+  endAdornment?: React.ReactNode
 }
 
 export class CurrencyInput extends React.Component<CurrencyInputProps, any> {}

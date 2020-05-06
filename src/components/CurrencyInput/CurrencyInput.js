@@ -173,7 +173,6 @@ class CurrencyInput extends React.Component {
   }
 }
 
-
 CurrencyInput.propTypes = {
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
   /** The variant to use. */
@@ -246,6 +245,11 @@ CurrencyInput.propTypes = {
   readOnly: PropTypes.bool,
   /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
+
+  disableUnderline: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  startAdornment: PropTypes.ReactNode,
+  endAdornment: PropTypes.ReactNode,
 }
 
 CurrencyInput.defaultProps = {
