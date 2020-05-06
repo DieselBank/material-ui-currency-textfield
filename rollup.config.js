@@ -5,10 +5,10 @@ import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.d.ts',
   output: [
     {
-      file: 'dist/index.js',
+      file: 'dist/index.d.ts',
       format: 'cjs'
     }
   ],
@@ -25,7 +25,7 @@ export default {
         "react"
       ],
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: ['external-helpers']
     }),
     resolve(),
     commonjs({
