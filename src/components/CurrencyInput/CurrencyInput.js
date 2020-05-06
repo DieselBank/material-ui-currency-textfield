@@ -24,7 +24,7 @@ const styles = (theme) => ({
  * * And also all the `options` from <a href="http://autonumeric.org/guide">AutoNumeric</a>
  */
 
-class CurrencyTextField extends React.Component {
+class CurrencyInput extends React.Component {
   constructor(props) {
     super(props)
     this.getValue = this.getValue.bind(this)
@@ -89,6 +89,7 @@ class CurrencyTextField extends React.Component {
     const {
       classes,
       currencySymbol,
+      variant,
       inputProps,
       InputProps,
       ...others
@@ -101,10 +102,10 @@ class CurrencyTextField extends React.Component {
       "label",
       "className",
       "autoFocus",
-      "variant",
       "style",
       "error",
       "disabled",
+      "disableUnderline",
       "type",
       "name",
       "defaultValue",
@@ -119,37 +120,60 @@ class CurrencyTextField extends React.Component {
       "margin",
       "SelectProps",
       "multiline",
+      "readOnly",
       "size",
       "FormHelperTextProps",
       "placeholder",
+      "startAdornment",
+      "endAdornment",
     ].forEach((prop) => (otherProps[prop] = this.props[prop]))
 
-    return (
-      <TextField
-        inputRef={(ref) => (this.input = ref)}
-        onChange={(e) => this.callEventHandler(e, "onChange")}
-        onFocus={(e) => this.callEventHandler(e, "onFocus")}
-        onBlur={(e) => this.callEventHandler(e, "onBlur")}
-        onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
-        onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
-        onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">{currencySymbol}</InputAdornment>
-          ),
-          ...InputProps,
-        }}
-        inputProps={{
-          className: classes.textField,
-          ...inputProps,
-        }}
-        {...otherProps}
-      />
-    )
+    if (variant === "outline") {
+      return (
+        <OutlinedInput
+          inputRef={(ref) => (this.input = ref)}
+          onChange={(e) => this.callEventHandler(e, "onChange")}
+          onFocus={(e) => this.callEventHandler(e, "onFocus")}
+          onBlur={(e) => this.callEventHandler(e, "onBlur")}
+          onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
+          onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
+          onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
+          className={clsx(classes.input, classes.blocked)}
+          InputProps={{
+            ...InputProps,
+          }}
+          inputProps={{
+            className: classes.textField,
+            ...inputProps,
+          }}
+          {...otherProps}
+        />
+      )
+    } else {
+      return (
+        <FilledInput
+          inputRef={(ref) => (this.input = ref)}
+          onChange={(e) => this.callEventHandler(e, "onChange")}
+          onFocus={(e) => this.callEventHandler(e, "onFocus")}
+          onBlur={(e) => this.callEventHandler(e, "onBlur")}
+          onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
+          onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
+          onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
+          InputProps={{
+            ...InputProps,
+          }}
+          inputProps={{
+            className: classes.textField,
+            ...inputProps,
+          }}
+          {...otherProps}
+        />
+      )
+    }
   }
 }
 
-CurrencyTextField.propTypes = {
+CurrencyInput.propTypes = {
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
   /** The variant to use. */
   variant: PropTypes.string,
@@ -223,15 +247,15 @@ CurrencyTextField.propTypes = {
   preDefined: PropTypes.object,
 }
 
-CurrencyTextField.defaultProps = {
+CurrencyInput.defaultProps = {
   type: "text",
-  variant: "standard",
+  variant: "filled",
   currencySymbol: "$",
   outputFormat: "number",
   textAlign: "right",
   maximumValue: "10000000000000",
   minimumValue: "-10000000000000",
 }
-export const CurrencyTextField = withStyles(styles)(CurrencyTextField)
+export const CurrencyInput = withStyles(styles)(CurrencyInput)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions()

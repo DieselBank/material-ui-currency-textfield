@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export interface CurrencyTextFieldProps {
+export interface CurrencyInputProps {
   type?: "text" | "tel" | "hidden"
   variant?: string
   id?: string
@@ -38,7 +38,4 @@ export interface CurrencyTextFieldProps {
   preDefined?: object
 }
 
-export class CurrencyTextField extends React.Component<
-  CurrencyTextFieldProps,
-  any
-> {}
+export class CurrencyInput extends React.Component<CurrencyInputProps, any> {}

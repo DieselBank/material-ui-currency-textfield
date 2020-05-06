@@ -1,3 +1,5 @@
 import CurrencyTextField from './components/CurrencyTextField'
+import CurrencyInput from './components/CurrencyInput'
 
-export default CurrencyTextField
+export const CurrencyTextField
+export const CurrencyInput
