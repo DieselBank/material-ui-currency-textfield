@@ -50,11 +50,26 @@ class CurrencyTextField extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    const isOptionsChanged =
+      JSON.stringify({ ...this.props, value: undefined }) !==
+      JSON.stringify({ ...newProps, value: undefined })
     const isValueChanged =
       this.props.value !== newProps.value && this.getValue() !== newProps.value
-
     if (isValueChanged) {
       this.autonumeric.set(newProps.value)
+    }
+    if (isOptionsChanged) {
+      this.autonumeric.update({
+        ...newProps.preDefined,
+        ...newProps,
+        onChange: undefined,
+        onFocus: undefined,
+        onBlur: undefined,
+        onKeyPress: undefined,
+        onKeyUp: undefined,
+        onKeyDown: undefined,
+        watchExternalChanges: false,
+      })
     }
   }
 
@@ -80,33 +95,34 @@ class CurrencyTextField extends React.Component {
     } = this.props
 
     const otherProps = {}
-    ;[
-      "id",
-      "label",
-      "className",
-      "autoFocus",
-      "variant",
-      "style",
-      "error",
-      "disabled",
-      "type",
-      "name",
-      "defaultValue",
-      "tabIndex",
-      "fullWidth",
-      "rows",
-      "rowsMax",
-      "select",
-      "required",
-      "helperText",
-      "unselectable",
-      "margin",
-      "SelectProps",
-      "multiline",
-      "size",
-      "FormHelperTextProps",
-      "placeholder",
-    ].forEach(prop => (otherProps[prop] = this.props[prop]))
+      ;[
+        "id",
+        "value",
+        "label",
+        "className",
+        "autoFocus",
+        "variant",
+        "style",
+        "error",
+        "disabled",
+        "type",
+        "name",
+        "defaultValue",
+        "tabIndex",
+        "fullWidth",
+        "rows",
+        "rowsMax",
+        "select",
+        "required",
+        "helperText",
+        "unselectable",
+        "margin",
+        "SelectProps",
+        "multiline",
+        "size",
+        "FormHelperTextProps",
+        "placeholder",
+      ].forEach(prop => (otherProps[prop] = this.props[prop]))
 
     return (
       <TextField
