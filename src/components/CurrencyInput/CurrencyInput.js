@@ -173,6 +173,7 @@ class CurrencyInput extends React.Component {
   }
 }
 
+
 CurrencyInput.propTypes = {
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
   /** The variant to use. */
@@ -256,6 +257,6 @@ CurrencyInput.defaultProps = {
   maximumValue: "10000000000000",
   minimumValue: "-10000000000000",
 }
-export const CurrencyInput = withStyles(styles)(CurrencyInput)
+export default withStyles(styles)(CurrencyInput)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions()

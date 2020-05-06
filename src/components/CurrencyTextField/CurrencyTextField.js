@@ -232,6 +232,6 @@ CurrencyTextField.defaultProps = {
   maximumValue: "10000000000000",
   minimumValue: "-10000000000000",
 }
-export const CurrencyTextField = withStyles(styles)(CurrencyTextField)
+export default withStyles(styles)(CurrencyTextField)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions()
