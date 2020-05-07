@@ -1,5 +1,5 @@
 import React from "react"
-import CurrencyTextField from "@unicef/material-ui-currency-textfield"
+import CurrencyInput from "@unicef/material-ui-currency-textfield"
 import { Button } from "@material-ui/core"
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <CurrencyTextField
+      <CurrencyInput
         label="Amount"
         value={value}
         currencySymbol="$"
@@ -23,6 +23,8 @@ export default function App() {
         helperText={"minimum number is 100"}
         decimalCharacter="."
         digitGroupSeparator=","
+        fullWidth
+        disableUnderline={false}
       />
       <Button onClick={resetValue}>Reset</Button>
     </React.Fragment>
