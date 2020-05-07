@@ -1,5 +1,5 @@
-const path = require('path')
-const { styles, theme } = require('./styleguide.styles')
+const path = require("path")
+const { styles, theme } = require("./styleguide.styles")
 module.exports = {
   title: "Material ui currency input",
   showUsage: true,
@@ -28,14 +28,23 @@ module.exports = {
   // },
   sections: [
     {
-      name: '',
-      content: 'src/components/readme.md'
+      name: "",
+      content: "src/components/readme.md",
     },
     {
-      name: '',
-      components: () => ([
-        path.resolve(__dirname, 'src/components/CurrencyTextField', 'CurrencyTextField.js'),
-      ])
+      name: "",
+      components: () => [
+        path.resolve(
+          __dirname,
+          "src/components/CurrencyTextField",
+          "CurrencyTextField.js"
+        ),
+        path.resolve(
+          __dirname,
+          "src/components/CurrencyInput",
+          "CurrencyInput.js"
+        ),
+      ],
     },
   ],
-};
+}
