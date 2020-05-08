@@ -5,10 +5,10 @@ import resolve from "rollup-plugin-node-resolve"
 import url from "rollup-plugin-url"
 
 export default {
-  input: "src/index.d.ts",
+  input: "src/index.js",
   output: [
     {
-      file: "dist/index.d.ts",
+      file: "dist/index.js",
       format: "cjs",
     },
   ],
