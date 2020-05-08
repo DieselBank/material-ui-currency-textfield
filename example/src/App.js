@@ -1,5 +1,5 @@
 import React from "react"
-import CurrencyInput from "@unicef/material-ui-currency-textfield"
+import { CurrencyInput } from "@unicef/material-ui-currency-textfield"
 import { Button } from "@material-ui/core"
 
 export default function App() {

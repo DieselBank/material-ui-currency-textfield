@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import AutoNumeric from "autonumeric"
 import { withStyles } from "@material-ui/styles"
-import { TextField, InputAdornment } from "@material-ui/core"
+import FilledInput from "@material-ui/core/FilledInput"
+import OutlinedInput from "@material-ui/core/OutlinedInput"
 
 const styles = (theme) => ({
   textField: (props) => ({
