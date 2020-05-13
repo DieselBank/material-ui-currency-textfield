@@ -1,5 +1,3 @@
-declare module "@unicef/material-ui-currency-textfield"
-
 import * as React from "react"
 
 export interface CurrencyInputProps {
@@ -15,14 +13,13 @@ export interface CurrencyInputProps {
   autoFocus?: boolean
   placeholder?: string
   value?: string | number
-  onChange?(event: React.ChangeEvent<HTMLInputElement>): void
+  onChange?(): void
   onFocus?(): void
   onBlur?(): void
   onKeyPress?(): void
   onKeyUp?(): void
   onKeyDown?(): void
   currencySymbol?: string
-  margin?: string
   decimalCharacter?: string
   decimalCharacterAlternative?: string
   decimalPlaces?: number
