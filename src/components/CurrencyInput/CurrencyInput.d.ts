@@ -1,3 +1,5 @@
+declare module "@unicef/material-ui-currency-textfield"
+
 import * as React from "react"
 
 export interface CurrencyInputProps {
