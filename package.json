@@ -2,7 +2,14 @@
 	"name": "@unicef/material-ui-currency-textfield",
 	"version": "0.8.6",
 	"description": "Currency input textfield for react with Material-ui style",
-	"keywords": [ "material design", "material ui", "currency", "currency input", "currency textfield", "react" ],
+	"keywords": [
+		"material design",
+		"material ui",
+		"currency",
+		"currency input",
+		"currency textfield",
+		"react"
+	],
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"homepage": "https://unicef.github.io/material-ui-currency-textfield",
@@ -12,7 +19,7 @@
 		"styleguide": "styleguidist server",
 		"styleguide:build": "styleguidist build",
 		"deploy": "gh-pages -d styleguide",
-		"transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyTextField src/components/CurrencyInput -d dist --copy-files",
+		"transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyInput -d dist --copy-files",
 		"prepublishOnly": "npm run transpile",
 		"publish-demo": "npm run build && npm run deploy"
 	},
